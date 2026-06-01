@@ -1,0 +1,111 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #06140f;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06140f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff99;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc7a;
+}
+
+/* Neon glow animation */
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 153, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+  }
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.neon-glow-animate {
+  animation: neon-glow 3s ease-in-out infinite;
+}
+
+.float-in {
+  animation: float-in 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: rgba(0, 255, 153, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 153, 0.1);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button base style */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-neon-green to-neon-dark text-dark-bg font-600 rounded-lg hover:shadow-glow-lg transition-smooth active:scale-95;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-neon-green text-neon-green rounded-lg hover:bg-glass-effect transition-smooth active:scale-95;
+}
+
+/* Heading animations */
+h1, h2, h3 {
+  @apply font-bold text-neon-green;
+}
